@@ -1,0 +1,113 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrap{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 1.5fr auto 1fr;
+    grid-template-columns: 100vw;
+    grid-template-areas: 
+    "he"
+    "ma"
+    "fo"
+    ;
+}
+header{
+    grid-area: "he";
+    background-color: grey;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img{
+    height: 20vh;
+    width: auto;
+    padding: 0vw 4vw;
+}
+h1{
+    color: wheat;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 0.5em;
+    font-size: 4em;
+}
+main{
+    grid-area: "ma";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+article, aside{
+    width: 75vw;
+}
+main p{
+    padding-bottom: 2em;
+    font-size: 1em;
+}
+main h2, a {
+    font-size: 2em;
+    padding: 0.5em;
+    padding-left: 0em;
+}
+main a{
+    color: black;
+    text-decoration: none;
+
+}
+a:hover{
+    cursor: hand;
+}
+footer{
+    grid-area: "fo";
+    background-color: darkblue;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-top: 3vh;
+}
+footer h3{
+    color: wheat;
+    padding: 0.5em;
+
+}
+/* Jönköping info */
+.wrapJ{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 7vh 89vh 4vh;
+    grid-template-columns: 100vw;
+    grid-template-areas: 
+    "heJ"
+    "maJ"
+    "foJ"
+    ;
+}
+.wrapJ header{
+    grid-area: heJ;
+
+}
+.wrapJ header h1{
+    margin-right: 5vw;
+}
+.wrapJ header img{
+    height: 5vh;
+    grid-area: heJ;
+}
+.wrapJ main{
+    grid-area: maJ;
+    height: 100% ;
+}
+.wrapJ footer{
+    grid-area: foJ;
+    position: relative;
+}
