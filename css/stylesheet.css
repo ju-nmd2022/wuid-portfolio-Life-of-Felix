@@ -84,7 +84,7 @@ footer h3{
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-rows: 7vh 89vh 4vh;
+    grid-template-rows: 12vh auto 7vh;
     grid-template-columns: 100vw;
     grid-template-areas: 
     "heJ"
@@ -98,6 +98,7 @@ footer h3{
 }
 .wrapJ header h1{
     margin-right: 5vw;
+    font-size: 3em;
 }
 .wrapJ header img{
     height: 5vh;
@@ -105,7 +106,6 @@ footer h3{
 }
 .wrapJ main{
     grid-area: maJ;
-    height: 100% ;
 }
 .wrapJ footer{
     grid-area: foJ;
