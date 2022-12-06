@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+:root{
+    --shadows:rgb(0, 5, 15);
+    --itemBack: rgb(146, 5, 150);
+    --textBackCol: rgb(237, 233, 216);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+h1, h2, h3, h4, p, a{
+    font-family: 'Syne Mono', monospace;
+}
+/* ----------------------------------------------------------- */
+/*                            home                            */
+/* --------------------------------------------------------- */
+.wrapper{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.wrapper header{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 100vh ;
+    grid-template-areas: 
+    'dd cd'
+    ;
+    /* I use grid areas name either use 2 or 3(not mix with both) letters so that you can see the grid in the text 
+
+    exampel: 
+        'he he' (he = header)
+        'ma as' (ma = main | as = aside)
+        'fo fo' (fo = footer)
+
+    dd = dock deck and cd = card display
+    */
+}
+#displayName{
+    grid-area: dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+}
+#displayCard{
+    grid-area: cd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+#displayCard img{
+    height: 50%;
+    width: auto;
+    z-index: 2;
+    animation-name: cardFall;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cardFall {
+    35%{
+        transform: rotate3d(1,0.5,0.2, 90deg);
+        margin-top: 50vh;
+    }
+    65%{
+        margin-top: -20vh;
+    }
+}
+#displayName h1, #displayName h2{
+    text-align: center;
+    font-weight: 600;
+}
+
+
+#displayName h1{
+    font-size: 15em;
+    text-transform: capitalize;
+}
+#displayName h2{
+    font-size: 7.5em;
+}
+
+main{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul{
+    margin: 3vh 0vh;
+    width: 50vw;
+    max-width: 70em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+}
+li{
+    list-style: none;
+    border: .1em solid ;
+    background-color: var(--itemBack);
+}
+ul li a img{
+    width: 100%;
+    height: auto;
+}
+ul li a{
+    text-decoration: none;
+}
+ul li a p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2em;
+    margin: 0.2em;
+    height: auto;
+    color: var(--textBackCol);
+    font-weight: 600;
+    font-size: 1.5em;
+
+}
+ul li a:hover{
+    animation-name: thickOutnIn;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes thickOutnIn{
+    70%{
+        letter-spacing: 0.1em;
+    }
+}
+.notMade:hover{
+    cursor: not-allowed;
+}
+aside{
+    height: auto;
+    padding: 10vw;
+    min-height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+aside h2{
+    font-size: 3em;
+}
+/* --------------------------------------------------------- */
+/*                       Time Lahan                          */
+/* --------------------------------------------------------- */
+
+.timLahanWrap{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10vh 90vh 1fr;
+    grid-template-areas: 
+    'na'
+    'sc'
+    'ma'
+    /* na = navigation | sc = Showcase | ma = Main  */
+    ;
+}
+.timLahanWrap nav{
+    grid-area: na;
+    display: flex;
+    justify-content: start;
+}
+.timLahanWrap nav a{
+    font-size: 8vh;
+    text-decoration: none;
+    margin-left: 2vw;
+}
+.showcaseCard{
+    grid-area: sc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.showcaseCard img{
+    height: 65vh;
+}
+.showcaseCard section{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2em;
+}
+.showcaseCard section h2{
+    font-size: 6vh;
+    font-weight: 600;
+}
+.showcaseCard section h3{
+    font-size: 4vh;
+    font-weight: 450;
+}
+.showcaseCard section h4{
+    font-size: 3vh;
+    font-weight: 300;
+}
+.timLahanWrap main{
+    grid-area: ma;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.timLahanArt{
+    width: 70%;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    'tl .  . '
+    '.  tx  .'
+    '.  .  de'
+    ;
+    /* tl = Tim Lahan | tx = text | de = deck */
+}
+.timLahanArt img{
+    width: 100%;
+}
+#photoTimLahan{
+    grid-area: tl;
+}
+#timLahanText{
+    grid-area: tx;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+}
+#defenceless{
+    grid-area: de;
+    rotate: 180deg;
+}
+
+@media screen and (max-width: 880px){
+
+    #displayName h1{
+        font-size: 350%;
+    }
+    #displayName h2{
+        font-size: 250%;
+    }
+    #displayCard img{
+        max-width: 30vw;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+    }
+    aside h2{
+        margin: 1vh;
+    }
+    .timLahanArt{
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        'tl'
+        'tx'
+        'de'
+        ;
+    }
+    #photoTimLahan{
+        padding-bottom: 10vh;
+    }
+}
